@@ -4,17 +4,18 @@
  * Model for the Kerala Tourism Destinations.
  */
 
-const settings = require("../config/db.settings");
+const { Schema } = require("mongoose");
+const settings = require("../dbConfig/db.settings");
 
 var DestinationSchema = settings.mongoose.Schema({
   id: { type: String, required: [true, "id is needed"] },
   name: { type: String, required: [true, "name is needed"] },
-  description: { type: String, required: true },
+  description: { type: String },
   imgUrl: { type: String },
-  type: { type: String },
+  type: { type: String, required: true },
   location: {
-    latitiude: { type: String },
-    longitude: { type: String },
+    latitiude: { type: String, required: true },
+    longitude: { type: String, required: true },
   },
   attractions: { type: [String] },
   directions: {

@@ -5,7 +5,7 @@
  */
 
 // Setup the DB_URI
-process.env.DB_URI = require("./config/db.config").DB_URI;
+process.env.DB_URI = require("./dbConfig/db.config").DB_URI;
 
 var express = require("express");
 var router = express.Router();
